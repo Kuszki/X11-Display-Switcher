@@ -4,6 +4,11 @@
 MainWindow::MainWindow(QApplication* app, QWidget *parent)
 : QDialog(parent), Interface(new Ui::MainWindow), INI(qgetenv("HOME") + "/.config/display-switcher.ini", QSettings::IniFormat)
 {
+	QFile File(":/style/style.css");
+	File.open(QIODevice::ReadOnly | QIODevice::Text);
+
+	qApp->setStyleSheet(File.readAll());
+
 	Interface->setupUi(this);
 
 	INI.setIniCodec("UTF-8");

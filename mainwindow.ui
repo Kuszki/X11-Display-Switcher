@@ -25,6 +25,9 @@
   <property name="windowTitle">
    <string>Układ obrazów</string>
   </property>
+  <property name="windowIcon">
+   <iconset theme="video-display"/>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" rowspan="2">
     <widget class="QGroupBox" name="groupSetup">

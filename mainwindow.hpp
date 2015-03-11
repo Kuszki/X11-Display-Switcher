@@ -5,6 +5,7 @@
 #include <QProcess>
 #include <QSettings>
 #include <QMessageBox>
+#include <QFile>
 
 namespace Ui
 {
