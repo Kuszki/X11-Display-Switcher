@@ -4,19 +4,17 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+TARGET		=	display-switcher
+TEMPLATE		=	app
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT			+=	core gui widgets
 
-TARGET = display-switcher
-TEMPLATE = app
+SOURCES		+=	main.cpp \
+				mainwindow.cpp
 
+HEADERS		+=	mainwindow.hpp
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+FORMS		+=	mainwindow.ui
 
-HEADERS  += mainwindow.hpp
-
-FORMS    += mainwindow.ui
-
-RESOURCES +=
+CONFIG		+=	c++11
+QMAKE_CXXFLAGS	+=	-O3
