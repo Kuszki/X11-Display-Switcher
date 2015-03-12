@@ -9,28 +9,26 @@
 
 namespace Ui
 {
-	class MainWindow;
+    class MainWindow;
 }
 
 class MainWindow : public QDialog
 {
 
-		Q_OBJECT
+        Q_OBJECT
 
-	public:
+    public:
 
-		MainWindow(QApplication* app,
-				 QWidget* parent = 0
-				 );
-		~MainWindow();
+        MainWindow(QWidget *parent = nullptr);
+        ~MainWindow();
 
-		void accept(void);
+        void accept(void);
 
-	private:
+    private:
 
-		Ui::MainWindow* Interface;
+        Ui::MainWindow* Interface;
 
-		QSettings INI;
+        QSettings INI;
 
 };
 

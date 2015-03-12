@@ -19,5 +19,4 @@ HEADERS  += mainwindow.hpp
 
 FORMS    += mainwindow.ui
 
-RESOURCES += \
-    resources.qrc
+RESOURCES +=
