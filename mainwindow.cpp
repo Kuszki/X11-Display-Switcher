@@ -33,37 +33,40 @@ void MainWindow::accept(void)
 {
     if (Interface->Master->currentIndex() == Interface->Slave->currentIndex())
     {
-        QMessageBox::warning(this, "Błąd", "Musisz wybrać dwa różne urządzenia");
+	   QMessageBox::warning(this, "Błąd", "Musisz wybrać dwa różne urządzenia");
     }
     else
     {
 
-        const QString master = Interface->Master->currentText();
-        const QString slave = Interface->Slave->currentText();
+	   const QString master = Interface->Master->currentText();
+	   const QString slave = Interface->Slave->currentText();
+	   const QString res = Interface->Resolution->currentText();
 
-        QString Command;
+	   QString Command;
 
-        INI.setValue("Master", master);
-        INI.setValue("Slave", slave);
+	   INI.setValue("Master", master);
+	   INI.setValue("Slave", slave);
 
-        if (Interface->setupMaster->isChecked())
-        {
-            Command = "xrandr --output " + master + " --auto --primary --output " + slave + " --off";
-        }
-        else if (Interface->setupSlave->isChecked())
-        {
-            Command = "xrandr --output " + slave + " --auto --output " + master + " --off";
-        }
-        else if (Interface->setupBoth->isChecked())
-        {
-            Command = "xrandr --output " + master + " --auto --primary --output " + slave + " --auto --right-of " + master;
-        }
+	   if (Interface->setupMaster->isChecked())
+	   {
+		  Command = QString("xrandr --output %1 --auto --primary --output %2 --off").arg(master).arg(slave);
+	   }
+	   else if (Interface->setupSlave->isChecked())
+	   {
+		  Command = QString("xrandr --output %2 --auto --output %1 --off").arg(master).arg(slave);
+	   }
+	   else if (Interface->setupBoth->isChecked())
+	   {
+		  Command = QString("xrandr --output %1 --auto --primary --output %2 --auto --right-of %1").arg(master).arg(slave).arg(res);
+	   }
+	   else if (Interface->setupClone->isChecked())
+	   {
+		   Command = QString("xrandr --output %1 --mode %3 --primary --output %2 --mode %3 --same-as %1").arg(master).arg(slave).arg(res);
+	   }
 
-        QProcess Process(this);
-
-        Process.execute(Command);
-
-        QDialog::accept();
+	   //QProcess::execute(Command);
+qDebug() << Command;
+	   QDialog::accept();
 
     }
 }

@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
+#include <QDebug>
 #include <QDialog>
 #include <QProcess>
 #include <QSettings>
@@ -15,20 +16,20 @@ namespace Ui
 class MainWindow : public QDialog
 {
 
-        Q_OBJECT
+	   Q_OBJECT
 
     public:
 
-        MainWindow(QWidget *parent = nullptr);
-        ~MainWindow();
+	   MainWindow(QWidget *parent = nullptr);
+	   ~MainWindow();
 
-        void accept(void);
+	   void accept(void);
 
     private:
 
-        Ui::MainWindow* Interface;
+	   Ui::MainWindow* Interface;
 
-        QSettings INI;
+	   QSettings INI;
 
 };
 
