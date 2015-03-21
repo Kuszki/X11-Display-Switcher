@@ -1,7 +1,6 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
-#include <QDebug>
 #include <QDialog>
 #include <QProcess>
 #include <QSettings>

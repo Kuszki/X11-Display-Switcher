@@ -64,8 +64,8 @@ void MainWindow::accept(void)
 		   Command = QString("xrandr --output %1 --mode %3 --primary --output %2 --mode %3 --same-as %1").arg(master).arg(slave).arg(res);
 	   }
 
-	   //QProcess::execute(Command);
-qDebug() << Command;
+	   QProcess::execute(Command);
+
 	   QDialog::accept();
 
     }

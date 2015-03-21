@@ -30,8 +30,8 @@
     <normaloff/>
    </iconset>
   </property>
-  <layout class="QGridLayout" name="layoutMain">
-   <item row="0" column="0" rowspan="5">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" rowspan="2">
     <widget class="QGroupBox" name="groupSetup">
      <property name="title">
       <string>Ekran</string>
@@ -69,23 +69,6 @@
        </widget>
       </item>
      </layout>
-    </widget>
-   </item>
-   <item row="3" column="2">
-    <widget class="QPushButton" name="Cancel">
-     <property name="text">
-      <string>Anuluj</string>
-     </property>
-     <property name="autoDefault">
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QPushButton" name="Save">
-     <property name="text">
-      <string>Wybierz</string>
-     </property>
     </widget>
    </item>
    <item row="0" column="1" colspan="2">
@@ -151,7 +134,24 @@
      </layout>
     </widget>
    </item>
-   <item row="2" column="1" colspan="2">
+   <item row="3" column="1">
+    <widget class="QPushButton" name="Cancel">
+     <property name="text">
+      <string>Anuluj</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QPushButton" name="Save">
+     <property name="text">
+      <string>Wybierz</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="3">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
